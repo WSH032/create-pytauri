@@ -15,9 +15,9 @@ package_type:
   type: str
   help: Package type
   choices:
-    - wheel
     - complete
-  default: wheel
+    - wheel
+  default: complete
 
 
 # com.identifier.app
@@ -65,10 +65,3 @@ _message_after_copy: |
   uv venv --python-preference only-system
   .venv\Scripts\activate
   uv pip install -e src-tauri\src-python
-
-
-## TODO: Only execute init.py on complete package_type.
-## TODO: Remove scripts directory after copying.
-#_tasks:
-#    - ["{{ _copier_python }}", scripts/init.py]
-##    - "rmdir {{ project_name }}/scripts"
